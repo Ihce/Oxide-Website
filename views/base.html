@@ -12,9 +12,13 @@
         <h1>Welcome</h1>
     </header>
 
-    <main>{{ template "content" . }}</main>
+    <main>
+        {{ block "content" . }}{{ end }}
+    </main>
 
-    <footer>&copy; 2024 My Website</footer>
+    <footer>
+        &copy; 2024 My Website
+    </footer>
 </body>
 
 </html>

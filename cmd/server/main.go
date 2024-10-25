@@ -1,16 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
-	"github.com/Ihce/Oxide-Website.git/internals/handlers"
+	"github.com/Ihce/Oxide-Website.git/internal/handlers"
 )
 
 func main() {
-	http.HandleFunc("/", handlers.Home)                  // Serve the main page
-	http.HandleFunc("/partial", handlers.PartialHandler) // Handle HTMX partial updates
+	http.HandleFunc("/", handlers.HomeHandler) // Serve the home page
 
-	log.Println("Starting server on :8080")
+	fmt.Println("Starting server on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
